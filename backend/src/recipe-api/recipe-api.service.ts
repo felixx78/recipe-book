@@ -1,7 +1,7 @@
 import { HttpService } from '@nestjs/axios';
 import { Injectable } from '@nestjs/common';
 import { firstValueFrom } from 'rxjs';
-import { RecipeApiResponsesLookup, RecipeApiResponsesSearch } from './recipe-api-responses.type';
+import { RecipeApiResponsesFilterOptions, RecipeApiResponsesLookup, RecipeApiResponsesSearch } from './recipe-api-responses.type';
 
 @Injectable()
 export class RecipeApiService {
@@ -14,18 +14,10 @@ export class RecipeApiService {
     return response.data.meals;
   }
 
-  async searchMeatsByIngredient(i: string) {
-    const response = await firstValueFrom(this.httpService.get<RecipeApiResponsesSearch>(this.BASE_URL + '/filter.php?i=' + i));
-    return response.data.meals;
-  }
-
-  async searchMeatsByCountry(a: string) {
-    const response = await firstValueFrom(this.httpService.get<RecipeApiResponsesSearch>(this.BASE_URL + '/filter.php?a=' + a));
-    return response.data.meals;
-  }
-
-  async searchMeatsByCategory(c: string) {
-    const response = await firstValueFrom(this.httpService.get<RecipeApiResponsesSearch>(this.BASE_URL + '/filter.php?c=' + c));
+  async filter(value: string, filterKey: RecipeApiResponsesFilterOptions) {
+    const response = await firstValueFrom(
+      this.httpService.get<RecipeApiResponsesSearch>(this.BASE_URL + '/filter.php?' + filterKey === 'country' ? 'a' : filterKey[0] + '=' + value),
+    );
     return response.data.meals;
   }
 

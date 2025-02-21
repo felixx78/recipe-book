@@ -7,3 +7,5 @@ export type RecipeApiResponsesSearch = {
 export type RecipeApiResponsesLookup = {
   meals: Array<Meat>;
 };
+
+export type RecipeApiResponsesFilterOptions = 'ingredient' | 'country' | 'category';
