@@ -8,4 +8,8 @@ export type RecipeApiResponsesLookup = {
   meals: Array<Meat>;
 };
 
-export type RecipeApiResponsesFilterOptions = 'ingredient' | 'country' | 'category';
+export enum RecipeApiResponsesFilterOptions {
+  'ingredient' = 'i',
+  'country' = 'a',
+  'category' = 'c',
+}

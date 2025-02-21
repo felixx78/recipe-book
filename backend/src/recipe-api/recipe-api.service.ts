@@ -14,9 +14,9 @@ export class RecipeApiService {
     return response.data.meals;
   }
 
-  async filterMealsSearch(value: string, filterKey: RecipeApiResponsesFilterOptions) {
+  async filterMeals(filterKey: keyof typeof RecipeApiResponsesFilterOptions) {
     const response = await firstValueFrom(
-      this.httpService.get<RecipeApiResponsesSearch>(this.BASE_URL + '/filter.php?' + filterKey === 'country' ? 'a' : filterKey[0] + '=' + value),
+      this.httpService.get<RecipeApiResponsesSearch>(this.BASE_URL + '/filter.php?' + RecipeApiResponsesFilterOptions[filterKey]),
     );
     return response.data.meals;
   }
