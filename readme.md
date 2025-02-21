@@ -20,21 +20,7 @@ Go to the project directory
   cd recipe-book
 ```
 
-Install dependencies and run client
-
-```bash
-  cd ./frontend
-```
-
-```bash
-  yarn install
-```
-
-```bash
-  yarn dev
-```
-
-Install dependencies and run server
+Install dependencies and run backend
 
 ```bash
   cd ./server
@@ -48,4 +34,18 @@ Run server
 
 ```bash
   yarn start:dev
+```
+
+Install dependencies and run frontend
+
+```bash
+  cd ./frontend
+```
+
+```bash
+  yarn install
+```
+
+```bash
+  yarn dev
 ```
