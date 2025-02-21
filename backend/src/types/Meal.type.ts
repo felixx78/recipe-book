@@ -1,4 +1,4 @@
-type Meat = {
+type Meal = {
   idMeal: string;
   strMeal: string;
   strDrinkAlternate: string | null;
@@ -54,4 +54,4 @@ type Meat = {
   dateModified: string | null;
 };
 
-export default Meat;
+export default Meal;
