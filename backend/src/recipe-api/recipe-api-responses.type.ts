@@ -1,15 +1,15 @@
-import Meat from 'src/types/Meat.type';
+import Meal from 'src/types/Meal.type';
 
 export type RecipeApiResponsesSearch = {
-  meals: Array<Meat>;
+  meals: Array<Meal>;
 };
 
 export type RecipeApiResponsesLookup = {
-  meals: Array<Meat>;
+  meals: Array<Meal>;
 };
 
 export enum RecipeApiResponsesFilterOptions {
-  'ingredient' = 'i',
-  'country' = 'a',
-  'category' = 'c',
+  i = 'ingredient',
+  a = 'country',
+  b = 'category',
 }
