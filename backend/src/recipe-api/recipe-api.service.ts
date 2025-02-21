@@ -11,13 +11,13 @@ export class RecipeApiService {
 
   async searchMeals(s: string) {
     const response = await firstValueFrom(this.httpService.get<RecipeApiResponsesSearch>(this.BASE_URL + '/search.php?s=' + s));
-    return response.data.meals;
+    return response.data.meals || [];
   }
 
   async filterMeals(value: string, filterBy: RecipeApiResponsesFilterOptions) {
     const key = Object.entries(RecipeApiResponsesFilterOptions).find(([k, v]) => v === filterBy)![0];
     const response = await firstValueFrom(this.httpService.get<RecipeApiResponsesSearch>(this.BASE_URL + '/filter.php?' + key + '=' + value));
-    return response.data.meals;
+    return response.data.meals || [];
   }
 
   async getMeatById(id: string) {
