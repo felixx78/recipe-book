@@ -4,7 +4,7 @@ import Link from "next/link";
 
 function MealCard(props: Meal) {
   return (
-    <Link className="w-[300px]" href={`/${props.idMeal}`}>
+    <Link className="w-[300px] block" href={`/${props.idMeal}`}>
       {props.strMealThumb ? (
         <Image width={300} height={300} src={props.strMealThumb} alt="" />
       ) : (
