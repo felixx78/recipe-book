@@ -11,5 +11,5 @@ export type RecipeApiResponsesLookup = {
 export enum RecipeApiResponsesFilterOptions {
   i = 'ingredient',
   a = 'country',
-  b = 'category',
+  c = 'category',
 }
