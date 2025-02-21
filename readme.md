@@ -23,7 +23,7 @@ Go to the project directory
 Install dependencies and run backend
 
 ```bash
-  cd ./server
+  cd ./backend
 ```
 
 ```bash
